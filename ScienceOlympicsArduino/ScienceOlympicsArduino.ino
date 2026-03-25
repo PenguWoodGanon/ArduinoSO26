@@ -19,7 +19,7 @@ int position = 90;
 //          Setup
 //////////////////////////////
 void setup() {
-  yawServo.attach(9);
+  yawServo.attach(2);
   Serial.begin(9600);
   clearSerial();
   homeServos();
