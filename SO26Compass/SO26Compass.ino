@@ -68,14 +68,12 @@ void homeServos() {
 
 void setAngle() {
   Serial.println("Enter Angle (0-180) and press Enter:");
-  
-  // Wait for user to type something
-  while (Serial.available() == 0) {
-    // Just waiting for input
-  }
 
-  // Parse integer from Serial Monitor
-  int newPos = Serial.parseInt(); 
+  while (Serial.available() == 0) {}
+
+  int newPos = Serial.parseInt();
+  delay(10);
+  while (Serial.available() > 0) Serial.read();
 
   if (newPos >= 0 && newPos <= 180) {
     position = newPos;
@@ -86,7 +84,6 @@ void setAngle() {
     Serial.println("Invalid Angle! Please use 0-180.");
   }
 }
-
 void clearSerial() {
   for (int i = 0; i < 15; i++) {
     Serial.println();

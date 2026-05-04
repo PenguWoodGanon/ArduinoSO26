@@ -78,7 +78,7 @@ void loop() {
 void moveLeft() {
   Serial.println();
   Serial.println("Left");
-  position += 10;
+  position -= 10;
   position = constrain(position, 0, 180);
   yawServo.write(position);
 }
@@ -86,7 +86,7 @@ void moveLeft() {
 void moveRight() {
   Serial.println();
   Serial.println("Right");
-  position -= 10;
+  position += 10;
   position = constrain(position, 0, 180);
   yawServo.write(position);
 }
